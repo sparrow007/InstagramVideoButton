@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+ext {
+    bintrayRepo = 'Library'  // this is the same as whatever you called your repository in Bintray
+    bintrayName = 'instagramvideobutton' // your bintray package name. I am calling it the same as my library name.
+
+    publishedGroupId = 'com.jackandphantom.android'
+    libraryName = 'instagramvideobutton'
+    artifact = 'instagramvideobutton' // I'm calling it the same as my library name
+
+    libraryDescription = 'This project is used for creating instagram video button in android and also provide custom attributes.'
+
+    siteUrl = 'https://github.com/sparrow007/InstagramVideoButton'
+    gitUrl = 'https://github.com/sparrow007/InstagramVideoButton.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'sparrow007' // Maven plugin uses this. I don't know if it needs to be anything special.
+    developerName = 'Ankit kumar'
+    developerEmail = 'ankit.steven007@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache"]
+}
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}

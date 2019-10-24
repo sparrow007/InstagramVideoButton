@@ -1,0 +1,2 @@
+include ':app', ':instagramvideobutton'
+rootProject.name='InstagramVideoButton'

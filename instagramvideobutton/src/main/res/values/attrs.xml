@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InstagramVideoButton">
+        <attr name="innerCircleColor" format="color"/>
+        <attr name="outerCircleColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="outerCircleWidth" format="float"/>
+        <attr name="enableVideoRecording" format="boolean"/>
+        <attr name="enablePhotoTaking" format="boolean"/>
+    </declare-styleable>
+</resources>
