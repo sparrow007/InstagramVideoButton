@@ -6,6 +6,8 @@ This library is inspired by the instagram video button having the same animation
 width = 700 height = 300/>
 </p>
 
+[Watch!](https://www.youtube.com/watch?v=QnSjCiQmHO4)
+
 [![Platform](https://img.shields.io/badge/platform-android-blue.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-13%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=13)
 
