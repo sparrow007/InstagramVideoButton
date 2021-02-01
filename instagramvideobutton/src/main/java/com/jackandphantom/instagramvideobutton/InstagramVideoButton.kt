@@ -61,6 +61,7 @@ class InstagramVideoButton @JvmOverloads constructor(context: Context, attrs: At
     private var startTimeInMills : Long = 0
     private var endTimeInMills : Long = 0
 
+    private var isLongPressCalled: Boolean = false
     private var isLongPressEndCalled : Boolean = false
     private var enablePhotoTaking : Boolean = false
     private var enableVideoRecording: Boolean = false
@@ -233,7 +234,7 @@ class InstagramVideoButton @JvmOverloads constructor(context: Context, attrs: At
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val detectUp = event!!.action == MotionEvent.ACTION_UP
-        if(!gestureDetector.onTouchEvent(event) && detectUp && enableVideoRecording)
+        if(!gestureDetector.onTouchEvent(event) && detectUp && enableVideoRecording && isLongPressCalled)
             longPressEnd()
         return true
     }
@@ -268,6 +269,7 @@ class InstagramVideoButton @JvmOverloads constructor(context: Context, attrs: At
     }
 
     private fun onLongPressStart() {
+        isLongPressCalled = true
         isVideoStart = false
         isLongPressEndCalled = false
         startTimeInMills = System.currentTimeMillis()
@@ -276,6 +278,7 @@ class InstagramVideoButton @JvmOverloads constructor(context: Context, attrs: At
     }
 
     fun cancelRecording() {
+        isLongPressCalled = false
         isVideoStart = false
         isLongPressEndCalled = true
         sweeAngle = 0f
@@ -297,6 +300,7 @@ class InstagramVideoButton @JvmOverloads constructor(context: Context, attrs: At
     }
 
     private fun longPressEnd() {
+        isLongPressCalled = false
         isVideoStart = false
         isLongPressEndCalled = true
         sweeAngle = 0f
